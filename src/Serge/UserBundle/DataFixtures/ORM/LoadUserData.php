@@ -21,11 +21,14 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $oUser = new User();
         $oUser->setUsername('user');
         $oUser->setPassword($this->encodePassword($oUser, 'user'));
+        $oUser->setIsActive(true);
         $manager->persist($oUser);
 
         $oAdmin = new User();
         $oAdmin->setUsername('admin');
         $oAdmin->setPassword($this->encodePassword($oAdmin, 'admin'));
+        $oAdmin->setRoles(array('ROLE_ADMIN'));
+        $oAdmin->setIsActive(false);
         $manager->persist($oAdmin);
 
         $manager->flush();
