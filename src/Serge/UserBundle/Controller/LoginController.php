@@ -4,7 +4,7 @@ namespace Serge\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class UserController extends Controller
+class LoginController extends Controller
 {
     public function loginAction()
     {
