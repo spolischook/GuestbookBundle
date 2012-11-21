@@ -1,7 +1,16 @@
 {% extends "GuestbookBundle::layout.html.twig" %}
 {% block body %}
 <h1>Entry list</h1>
+    <section class="events">
+        <header id="menu">
+            <a class="button" href="{{ path('entry_new') }}">Create new entry</a>
 
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a href="{{ path('logout') }}" class="link">Logout</a>
+            {% else %}
+                <a href="{{ path('login') }}" class="link">Login</a>
+            {% endif %}
+        </header>
 <table class="records_list">
     <thead>
         <tr>
@@ -41,4 +50,5 @@
         </a>
     </li>
 </ul>
+    </section>
 {% endblock %}

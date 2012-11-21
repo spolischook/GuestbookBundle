@@ -1,3 +1,3 @@
 guestbook_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: GuestbookBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: GuestbookBundle:Entry:index }
