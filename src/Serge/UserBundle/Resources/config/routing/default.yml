@@ -1,0 +1,3 @@
+user_login:
+    pattern: /login
+    defaults: { _controller: UserBundle:Login:login }
